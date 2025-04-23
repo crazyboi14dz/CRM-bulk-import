@@ -1,12 +1,21 @@
 :root {
+    /* Brand Colors */
     --primary-color: #F8FAFC;
+    /* Primary color for backgrouds*/
     --secondary-color: #0944A1;
-    
+    /* Secondary color for accents or buttons */
+
+    /* Text Colors */
     --text-heading-color: #020202;
+    /* Color for headings */
     --text-body-color: #404040;
+    /* Color for body text */
     --text-white-color: #F2F2F2;
-    
+    /* Color for text on dark backgrounds */
+
+    /* Neutral Greys */
     --neutral-grey-0: #0D0D0D;
+    /* Darkest grey */
     --neutral-grey-1: #262626;
     --neutral-grey-2: #404040;
     --neutral-grey-3: #595959;
@@ -16,8 +25,11 @@
     --neutral-grey-7: #BFBFBF;
     --neutral-grey-8: #D9D9D9;
     --neutral-grey-9: #F2F2F2;
-    
+    /* Lightest grey */
+
+    /* Semantic Error Colors */
     --semantic-error-1: #160704;
+    /* Darkest error shade */
     --semantic-error-2: #41150C;
     --semantic-error-3: #6C2214;
     --semantic-error-4: #97301B;
@@ -27,8 +39,11 @@
     --semantic-error-8: #EBA293;
     --semantic-error-9: #F3C7BE;
     --semantic-error-10: #FBECE9;
-    
+    /* Lightest error shade */
+
+    /* Semantic Warning Colors */
     --semantic-warning-1: #161104;
+    /* Darkest warning shade */
     --semantic-warning-2: #41320C;
     --semantic-warning-3: #6C5314;
     --semantic-warning-4: #97751B;
@@ -38,8 +53,11 @@
     --semantic-warning-8: #EBD393;
     --semantic-warning-9: #F3E5BE;
     --semantic-warning-10: #FBF6E9;
-    
+    /* Lightest warning shade */
+
+    /* Semantic Success Colors */
     --semantic-success-1: #0C1604;
+    /* Darkest success shade */
     --semantic-success-2: #23410C;
     --semantic-success-3: #3B6C14;
     --semantic-success-4: #52971B;
@@ -49,4 +67,63 @@
     --semantic-success-8: #BAEB93;
     --semantic-success-9: #D6F3BE;
     --semantic-success-10: #F1FBE9;
-  }
+    /* Lightest success shade */
+
+    /* Font Families */
+    --font-main: "Poppins", sans-serif;
+    --font-sub: "Roboto", sans-serif;
+
+    /* Font Weights */
+    --font-regular: 400;
+    /* Regular for both Poppins and Roboto */
+    --font-medium: 500;
+    /* Medium for both Poppins and Roboto */
+    --font-semibold: 600;
+    /* SemiBold for Poppins */
+    --font-bold: 700;
+    /* Bold for Roboto */
+
+    /* Letter Spacings */
+    --letter-spacing-regular: 0px;
+    /* 0% for Regular */
+    --letter-spacing-medium: 0.16px;
+    /* 1% for Medium */
+    --letter-spacing-semibold: 0.32px;
+    /* 2% for SemiBold (Poppins) */
+    --letter-spacing-bold: 0.32px;
+    /* 2% for Bold (Roboto) */
+
+    /* Headlines (Poppins) */
+    --h1-size: 48px;
+    --h1-line-height: 72px;
+    --h2-size: 40px;
+    --h2-line-height: 60px;
+    --h3-size: 36px;
+    --h3-line-height: 54px;
+
+    /* Titles (Roboto) */
+    --t1-size: 32px;
+    --t1-line-height: 38px;
+    --t2-size: 24px;
+    --t2-line-height: 28px;
+    --t3-size: 20px;
+    --t3-line-height: 16px;
+    /* Note: Line height < font size, possibly a typo */
+
+    /* Body (Roboto) */
+    --b1-size: 18px;
+    --b1-line-height: 21px;
+    --b2-size: 16px;
+    --b2-line-height: 19px;
+    --b3-size: 14px;
+    --b3-line-height: 16px;
+
+    /* Labels (Roboto) */
+    --l1-size: 16px;
+    --l1-line-height: 19px;
+    --l2-size: 14px;
+    --l2-line-height: 16px;
+    --l3-size: 12px;
+    --l3-line-height: 14px;
+
+}
