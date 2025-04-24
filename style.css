@@ -125,5 +125,97 @@
     --l2-line-height: 16px;
     --l3-size: 12px;
     --l3-line-height: 14px;
+}
 
+/* Sidebar Styles */
+.fixed-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 16.67%;
+    /* Matches Bootstrap col-2 (2/12 of container) */
+    height: 100vh;
+    /* Full viewport height */
+    background-color: var(--primary-color);
+    padding: 20px 0;
+    border-right: 1px solid var(--neutral-grey-7);
+    overflow-y: auto;
+    /* Scroll if content exceeds height */
+}
+
+/* Sidebar Title */
+.sidebar-title {
+    font-family: var(--font-main);
+    font-weight: var(--font-regular);
+    font-size: var(--h3-size);
+    line-height: var(--h3-line-height);
+    letter-spacing: var(--letter-spacing-regular);
+    color: var(--text-heading-color);
+    margin: 0 0 20px 0;
+    padding-left: 20px;
+}
+
+/* Search Input */
+.sidebar-search {
+    font-family: var(--font-sub);
+    font-weight: var(--font-regular);
+    font-size: var(--l1-size);
+    line-height: var(--l1-line-height);
+    letter-spacing: var(--letter-spacing-regular);
+    color: var(--text-body-color);
+}
+
+/* Navigation Links */
+.fixed-sidebar .nav-link {
+    font-family: var(--font-sub);
+    font-weight: var(--font-regular);
+    font-size: var(--l1-size);
+    line-height: var(--l1-line-height);
+    letter-spacing: var(--letter-spacing-regular);
+    color: var(--text-body-color);
+    padding: 10px 20px;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+}
+
+.fixed-sidebar .nav-link:hover,
+.fixed-sidebar .nav-link.active {
+    color: var(--secondary-color);
+    font-weight: var(--font-medium);
+    letter-spacing: var(--letter-spacing-medium);
+}
+
+/* Main Content */
+.col-md-10.offset-md-2 {
+    padding: 20px;
+    min-height: 100vh;
+    /* Ensure content area spans viewport height */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .fixed-sidebar {
+        width: 200px;
+        /* Fixed width for smaller screens */
+    }
+
+    .col-md-10.offset-md-2 {
+        margin-left: 200px;
+        /* Adjust offset */
+    }
+}
+
+@media (max-width: 576px) {
+    .fixed-sidebar {
+        width: 100%;
+        /* Full width on very small screens */
+        height: auto;
+        /* Allow height to adjust */
+        position: relative;
+        /* Disable fixed positioning */
+    }
+
+    .col-md-10.offset-md-2 {
+        margin-left: 0;
+        /* Remove offset */
+    }
 }
