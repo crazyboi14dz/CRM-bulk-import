@@ -142,8 +142,6 @@
     padding: 20px 0;
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
-    border-right: 1px solid var(--neutral-grey-7);
-    /* Scroll if content exceeds height */
 }
 
 .fixed-sidebar .sidebar-title {
@@ -264,7 +262,8 @@
 
 .fixed-sidebar.collapsed .nav-link,
 .fixed-sidebar.collapsed .sidebar-title,
-.fixed-sidebar.collapsed .search-menu #search-menu-input {
+.fixed-sidebar.collapsed .search-menu #search-menu-input,
+.fixed-sidebar.collapsed .action .action-link {
     display: none;
 }
 
@@ -273,6 +272,11 @@
     border-top-right-radius: 50rem !important;
     border-bottom-right-radius: 50rem !important;
     padding: 12px;
+}
+
+/* Conditional styling for rounded corners */
+.fixed-sidebar.collapsed .action .action-item {
+    justify-content: center;
 }
 
 .fixed-sidebar.collapsed .nav-link-icon {
@@ -298,4 +302,76 @@
 
 .fixed-sidebar.collapsed .collapse-btn svg {
     transform: rotate(180deg);
+}
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+                            Main Content Styles
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+header .top-nav {
+    padding: 16px 32px;
+    background: var(--primary-color);
+}
+
+header .top-nav h2 {
+    font-family: var(--font-sub);
+    font-weight: var(--font-medium);
+    font-size: var(--t1-size);
+    line-height: var(--t1-line-height);
+    color: var(--text-heading-color);
+    margin: 0;
+}
+
+header .top-nav .user-profile {
+    gap: 8px;
+}
+
+header .top-nav .user-profile>div {
+    gap: 2px;
+}
+
+header .top-nav .user-profile .user-name {
+    font-size: var(--b1-size);
+    line-height: var(--b1-line-height);
+    font-weight: var(--font-regular);
+    color: var(--text-heading-color);
+}
+
+header .top-nav .user-profile .action {
+    font-size: var(--l2-size);
+    line-height: var(--l2-line-height);
+    font-weight: var(--font-regular);
+    color: var(--neutral-grey-4);
+}
+
+header .top-nav .user-profile .action:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+header .top-nav .main-head {
+    gap: 24px;
+}
+
+header .top-nav .main-head .main-head-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    gap: 24px;
+}
+
+header .top-nav .main-head .main-head-icon li {
+    list-style-type: none;
+
+}
+
+/* Breadcrumb */
+header nav{
+    padding: 16px 32px;
+    background: var(--primary-color);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.10);
+}
+header nav .breadcrumb{
+    margin: 0;
 }
