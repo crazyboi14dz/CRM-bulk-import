@@ -127,10 +127,15 @@
     --l3-line-height: 14px;
 }
 
+body {
+    background-color: #F5F5F5;
+}
+
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                             Sidebar Styles 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 .fixed-sidebar {
+    z-index: 1;
     position: fixed;
     top: 0;
     left: 0;
@@ -307,6 +312,20 @@
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
                             Main Content Styles
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+.fixed-main-content {
+    position: fixed;
+    height: 100vh;
+    /* Full viewport height */
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+header {
+    position: relative;
+    z-index: 1;
+}
+
 header .top-nav {
     padding: 16px 32px;
     background: var(--primary-color);
@@ -367,11 +386,48 @@ header .top-nav .main-head .main-head-icon li {
 }
 
 /* Breadcrumb */
-header nav{
+header nav {
     padding: 16px 32px;
     background: var(--primary-color);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.10);
 }
-header nav .breadcrumb{
+
+header nav .breadcrumb {
     margin: 0;
+}
+
+.fixed-main-content main {
+    padding: 32px;
+    background: var(--primary-color);
+    height: calc(100vh - 240px);
+    /* Full viewport height minus header height */
+    overflow-y: scroll;
+}
+
+.fixed-main-content .fixed-cta {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    background: var(--primary-color);
+    box-shadow: 0 -2px 8px 0 rgba(0, 0, 0, 0.15);
+    width: 100%;
+    justify-content: end;
+    padding: 24px 108px;
+}
+
+.fixed-main-content .fixed-cta button.btn.btn-primary {
+    padding: 16px 8px 16px 24px;
+    font-family: var(--t2-size);
+    background-color: var(--secondary-color);
+    color: var(--text-white-color);
+    font-weight: var(--font-medium);
+    line-height: var(--t2-line-height);
+}
+
+.fixed-main-content .fixed-cta button.btn.btn-primary:hover {
+    background-color: var(--neutral-grey-3);
+    
+}
+.fixed-main-content .fixed-cta button.btn.btn-primary:focus {
+    box-shadow: 0 0px 4px 2 rgba(0, 0, 0, 0.24)
 }
