@@ -7,8 +7,8 @@
     <title>CRM Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -16,23 +16,23 @@
         <div class="row">
             <!-- Sidebar -->
             <div class="col-2 p-0">
-                <div class="fixed-sidebar">
+                <div class="fixed-sidebar" id="sidebar">
                     <div class="d-flex justisfy-content-center align-items-center px-4 mb-3 gap-2">
                         <img src="img/Logo.png" alt="logo" width="50px" height="50px">
                         <h4 class="sidebar-title">SangamCRM</h4>
                     </div>
-                    <div class="search-menu input-group mb-3 px-3">
-                        <span class="input-group-text rounded-start-pill" id="search-menu">
+                    <div class="search-menu input-group mb-3 px-3" style="justify-content: center;">
+                        <span class="input-group-text rounded-start-pill">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M15.5 5C13.567 5 12 6.567 12 8.5C12 10.433 13.567 12 15.5 12C17.433 12 19 10.433 19 8.5C19 6.567 17.433 5 15.5 5ZM10 8.5C10 5.46243 12.4624 3 15.5 3C18.5376 3 21 5.46243 21 8.5C21 9.6575 20.6424 10.7315 20.0317 11.6175L22.7071 14.2929L21.2929 15.7071L18.6175 13.0317C17.7315 13.6424 16.6575 14 15.5 14C12.4624 14 10 11.5376 10 8.5ZM3 4H8V6H3V4ZM3 11H8V13H3V11ZM21 18V20H3V18H21Z" />
                             </svg>
                         </span>
-                        <input type="text" class="form-control sidebar-search rounded-end-pill"
+                        <input type="text" class="form-control sidebar-search rounded-end-pill" id="search-menu-input"
                             placeholder="Search menu...">
                     </div>
-                    <ul class="nav flex-column">
+                    <ul class="nav flex-column sidebar-menu flex-nowrap">
                         <li class="nav-item">
                             <span class="nav-link-icon active">
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -180,8 +180,15 @@
                             <a class="nav-link" href="#">Training Videos</a>
                         </li>
                     </ul>
-                    
-                    <div class="d-flex justisfy-content-center align-items-center px-3">
+                    <button id="collapse-arrow" class="collapse-btn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M10.8284 12.0007L15.7782 16.9504L14.364 18.3646L8 12.0007L14.364 5.63672L15.7782 7.05093L10.8284 12.0007Z"
+                                fill="#020202" />
+                        </svg>
+                    </button>
+
+                    <div class="d-flex justisfy-content-center align-items-center px-3 pt-3">
                         <ul class="action">
                             <li class="action-item">
                                 <span>
@@ -218,17 +225,77 @@
             <div class="col-md-10 offset-md-2">
                 <h1>Welcome to the CRM Dashboard</h1>
                 <!-- Add your dashboard content here -->
-                <div style="height: 1500px;">Scroll down to see the fixed sidebar in action.</div>
+                <div style="">Scroll down to see the fixed sidebar in action.</div>
+                <div class="d-flex flex-wrap gap-1 mt-4">
+                    <div class="p-5 w-50 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-2 bg-dark"></div>
+                    <div class="p-2 bg-dark"></div>
+                    <div class="p-2 bg-dark"></div>
+                    <div class="p-2 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-5 w-50 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-5 w-50 bg-dark"></div>
+                    <div class="p-5 w-50 bg-dark"></div>
+                    <div class="p-5 w-50 bg-dark"></div>
+                    <div class="p-5 w-50 bg-dark"></div>
+                    <div class="p-5 w-50 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-5 w-50 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                    <div class="p-5 bg-dark"></div>
+                </div>
             </div>
         </div>
     </div>
 
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sidebar = document.getElementById('sidebar');
+            const searchMenuInput = document.getElementById('search-menu-input');
+            const toggleButton = document.getElementById('collapse-arrow');
+
+            toggleButton.addEventListener('click', function () {
+                sidebar.classList.toggle('collapsed');
+                searchMenuInput.classList.toggle('collapsed');
+                const svg = toggleButton.querySelector('svg');
+                if (sidebar.classList.contains('collapsed')) {
+                    svg.style.transform = 'rotate(180deg)';
+                } else {
+                    svg.style.transform = 'rotate(0deg)';
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
