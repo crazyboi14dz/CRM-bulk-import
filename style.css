@@ -4,6 +4,7 @@
     /* Primary color for backgrouds*/
     --secondary-color: #0944A1;
     /* Secondary color for accents or buttons */
+    --secondary-color-2: #CFE0FC;
 
     /* Text Colors */
     --text-heading-color: #020202;
@@ -129,6 +130,7 @@
 
 body {
     background-color: #F5F5F5;
+    font-family: var(--font-sub);
 }
 
 /* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -397,9 +399,9 @@ header nav .breadcrumb {
 }
 
 .fixed-main-content main {
-    padding: 32px;
+    padding: 48px 32px;
     background: var(--primary-color);
-    height: calc(100vh - 240px);
+    height: calc(100vh - 200px);
     /* Full viewport height minus header height */
     overflow-y: scroll;
 }
@@ -429,7 +431,7 @@ main .progress-section .progress-icons .icon {
 }
 
 main .progress-section .progress-icons .icon.active {
-    background: #CFE0FC;
+    background: var(--secondary-color-2);
     border: 1px solid var(--secondary-color);
 }
 
@@ -487,7 +489,182 @@ main .progress-section .progress-text .text.active {
     color: var(--secondary-color);
 }
 
+/* Content Section */
+main .content-section {
+    display: flex;
+    padding: 32px 48px;
+    flex-direction: column;
+    gap: 40px;
+    background: var(--primary-color);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+    border-radius: 24px;
+    margin-top: 40px;
+}
 
+main .content-section .content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+main .content-section .content p {
+    font-size: var(--b1-size);
+    color: var(--text-body-color);
+}
+
+main .content-section .content .head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+main .content-section .content .head .icon {
+    display: flex;
+    height: 40px;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
+    background: var(--secondary-color-2);
+    border-radius: 100%;
+    border: 1px solid var(--secondary-color);
+}
+
+main .content-section .content .head span {
+    font-size: var(--t2-size);
+    font-weight: var(--font-medium);
+    line-height: var(--t2-line-height);
+    color: var(--text-heading-color);
+}
+
+main .content-section .content .head .icon svg path {
+    fill: none;
+    stroke: var(--secondary-color);
+}
+
+main .content-section .content .drag-drop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 48px 128px;
+    border: 2px dashed var(--neutral-grey-5);
+    border-radius: 8px;
+}
+
+main .content-section .content .drag-drop>span {
+    font-size: var(--t3-size);
+    font-weight: var(--font-semibold);
+    line-height: var(--t3-line-height);
+    color: var(--text-heading-color);
+}
+
+main .content-section .content .drag-drop .or span {
+    font-size: var(--b2-size);
+    font-weight: var(--font-regular);
+    line-height: var(--b2-line-height);
+    color: var(--text-body-color);
+}
+
+main .content-section .content .drag-drop .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 64px;
+    height: 64px;
+    background: var(--neutral-grey-8);
+    border-radius: 100%;
+}
+
+main .content-section .content .drag-drop .or {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Recommeded Section */
+main .content-section .content .recommended {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+main .content-section .content .recommended .tag {
+    font-size: var(--l2-size);
+    font-weight: var(--font-regular);
+    line-height: var(--l2-line-height);
+    color: var(--text-heading-color);
+    background: var(--secondary-color-2);
+    border-radius: 50px;
+    padding: 10px 15px;
+    display: inline-block;
+    margin: 0 auto 0 0;
+}
+
+main .content-section .content .recommended span {
+    font-size: var(--t2-size);
+    font-weight: var(--font-medium);
+    line-height: var(--t2-line-height);
+    color: var(--text-heading-color);
+}
+
+main .content-section .content .template-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+main .content-section .content .template-list .template-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: var(--primary-color);
+    border-radius: 8px;
+    border: 1px solid var(--neutral-grey-7);
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
+}
+
+main .content-section .content .template-list .template-item .detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+main .content-section .content .template-list .template-item .detail p {
+    margin: 0;
+    font-size: var(--l2-size);
+    font-weight: var(--font-medium);
+    color: var(--text-heading-color);
+}
+
+main .content-section .content .template-list .template-item .detail span {
+    font-size: var(--l3-size);
+    font-weight: var(--font-regular);
+    color: var(--text-body-color);
+}
+
+main .content-section .content .template-list .template-item .detail img {
+    width: 40px;
+    height: 40px;
+}
+
+main .content-section .content .quote {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4px 16px;
+    gap: 8px;
+    background: var(--secondary-color-2);
+    border-radius: 8px;
+    border: 1px solid var(--neutral-grey-8);
+}
+
+main .content-section .content .quote i {
+    font-size: var(--t3-size);
+}
 
 
 
@@ -501,11 +678,15 @@ main .progress-section .progress-text .text.active {
     box-shadow: 0 -2px 8px 0 rgba(0, 0, 0, 0.15);
     width: 100%;
     justify-content: end;
-    padding: 24px 108px;
+    padding: 16px 56px;
 }
 
-.fixed-main-content .fixed-cta button.btn.btn-primary {
-    padding: 16px 8px 16px 24px;
+/* Primary-button */
+button.btn.btn-primary {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    /* padding: 8px 8px 8px 24px; */
     font-family: var(--t2-size);
     background-color: var(--secondary-color);
     color: var(--text-white-color);
@@ -513,11 +694,11 @@ main .progress-section .progress-text .text.active {
     line-height: var(--t2-line-height);
 }
 
-.fixed-main-content .fixed-cta button.btn.btn-primary:hover {
+button.btn.btn-primary:hover {
     background-color: var(--neutral-grey-3);
 
 }
 
-.fixed-main-content .fixed-cta button.btn.btn-primary:focus {
+button.btn.btn-primary:focus {
     box-shadow: 0 0px 4px 2 rgba(0, 0, 0, 0.24)
 }
