@@ -404,6 +404,95 @@ header nav .breadcrumb {
     overflow-y: scroll;
 }
 
+/* Progress Section - icons */
+main .progress-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+main .progress-section .progress-icons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+main .progress-section .progress-icons .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    background: var(--neutral-grey-8);
+    border-radius: 100%;
+}
+
+main .progress-section .progress-icons .icon.active {
+    background: #CFE0FC;
+    border: 1px solid var(--secondary-color);
+}
+
+main .progress-section .progress-icons .icon.active svg path {
+    stroke: var(--secondary-color);
+}
+
+main .progress-section .progress-icons .icon svg path {
+    stroke: var(--neutral-grey-4);
+    fill: none;
+}
+
+main .progress-section .progress-icons .icon:nth-child(2) svg path {
+    fill: var(--neutral-grey-4);
+    stroke: none;
+}
+
+main .progress-section .progress-icons .icon.active:nth-child(2) svg path {
+    fill: var(--secondary-color);
+    stroke: none;
+}
+
+/* Progress Section - Bar */
+main .progress-section .progress-bar {
+    display: flex;
+    width: 100%;
+    height: 10px;
+    background: var(--neutral-grey-8);
+    border-radius: 50px;
+}
+
+main .progress-section .progress-bar .progress-bar-fill {
+    width: 10%;
+    height: 100%;
+    background: var(--secondary-color);
+    border-radius: 50px;
+}
+
+/* Progress Section - Text */
+main .progress-section .progress-text {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+main .progress-section .progress-text .text {
+    font-family: var(--font-sub);
+    font-size: var(--l2-size);
+    line-height: var(--l2-line-height);
+    font-weight: var(--font-medium);
+    color: var(--text-body-color);
+}
+
+main .progress-section .progress-text .text.active {
+    color: var(--secondary-color);
+}
+
+
+
+
+
+
+/* Bottom-nav */
 .fixed-main-content .fixed-cta {
     display: flex;
     position: absolute;
@@ -426,8 +515,9 @@ header nav .breadcrumb {
 
 .fixed-main-content .fixed-cta button.btn.btn-primary:hover {
     background-color: var(--neutral-grey-3);
-    
+
 }
+
 .fixed-main-content .fixed-cta button.btn.btn-primary:focus {
     box-shadow: 0 0px 4px 2 rgba(0, 0, 0, 0.24)
 }
