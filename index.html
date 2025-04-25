@@ -543,10 +543,10 @@
                                                         <img src="illustration/Lateness-rafiki.svg"
                                                             alt="Late person running illustration">
                                                     </div>
-
                                                 </div>
                                             </div>
                                         </div>
+
                                         <div class="row">
                                             <div class="col-md col-12">
                                                 <div class="content">
@@ -567,6 +567,38 @@
                                                         <span>What should we do with this data?</span>
                                                     </div>
                                                     <p>Select how the system should handle your imported records:</p>
+
+                                                    <div class="options">
+                                                        <label class="option-item" for="create-new">
+                                                            <div class="detail">
+                                                                <div class="title">Create new records only</div>
+                                                                <span>Skip records that already exist in the
+                                                                    system</span>
+                                                            </div>
+                                                            <input type="radio" id="create-new" name="action"
+                                                                value="create-new" checked>
+                                                        </label>
+                                                        <label class="option-item" for="update-existing">
+                                                            <div class="detail">
+                                                                <div class="title">Update if ID matches
+                                                                    records</div>
+                                                                <span>Update existing records with matching IDs</span>
+                                                            </div>
+                                                            <input type="radio" id="update-existing" name="action"
+                                                                value="update-existing">
+                                                        </label>
+                                                        <label class="option-item" for="create-update">
+                                                            <div class="detail">
+                                                                <div class="title">Create new and update
+                                                                    existing records</div>
+                                                                <span>Adds new records and updates those with matching
+                                                                    IDs.</span>
+                                                            </div>
+                                                            <input type="radio" id="create-update" name="action"
+                                                                value="create-update">
+                                                        </label>
+                                                    </div>
+
                                                 </div>
                                             </div>
                                             <div class="col-md col-12">
@@ -588,58 +620,57 @@
                                                     </div>
                                                     <p>Select a saved import configuprartion to auto-map your fields:
                                                     </p>
+                                                    <div class="row saved-mapping align-items-center">
+                                                        <div class="form-floating col-12 col-md-6">
+                                                            <select class="form-select rounded-pill" id="floatingSelect"
+                                                                aria-label="Floating label select example">
+                                                                <option selected>Select saved mapping</option>
+                                                                <option value="Contacts Mapping">Contacts Mapping
+                                                                </option>
+                                                                <option value="Customers Mapping">Customers Mapping
+                                                                </option>
+                                                            </select>
+                                                            <!-- <label for="floatingSelect">Works with selects</label> -->
+                                                        </div>
+                                                        <div class="col-12 col-md-6">
+                                                            <div class="d-flex align-items-center gap-2">
+                                                                <button type="button"
+                                                                    class="btn btn-primary-outline rounded-pill ">
+                                                                    <svg width="17" height="17" viewBox="0 0 17 17"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path
+                                                                            d="M10.1892 14.9577C10.2146 15.0208 10.2586 15.0747 10.3154 15.1121C10.3722 15.1494 10.4391 15.1685 10.5071 15.1668C10.5751 15.165 10.641 15.1426 10.6958 15.1023C10.7506 15.0621 10.7918 15.006 10.8139 14.9417L15.1472 2.27503C15.1686 2.21596 15.1726 2.15203 15.159 2.09073C15.1453 2.02943 15.1145 1.97329 15.07 1.92888C15.0256 1.88447 14.9695 1.85363 14.9082 1.83996C14.8469 1.82629 14.783 1.83036 14.7239 1.8517L2.05723 6.18503C1.9929 6.20709 1.93685 6.24831 1.89662 6.30314C1.85638 6.35798 1.83388 6.42381 1.83214 6.4918C1.8304 6.55979 1.8495 6.62669 1.88687 6.68351C1.92425 6.74034 1.97811 6.78437 2.04123 6.8097L7.3279 8.9297C7.49503 8.99661 7.64687 9.09667 7.77428 9.22385C7.90169 9.35103 8.00202 9.50269 8.06924 9.6697L10.1892 14.9577Z"
+                                                                            stroke="#020202" stroke-linecap="round"
+                                                                            stroke-linejoin="round" />
+                                                                        <path d="M15.0707 1.92969L7.77734 9.22235"
+                                                                            stroke="#020202" stroke-linecap="round"
+                                                                            stroke-linejoin="round" />
+                                                                    </svg> Publish</button>
+                                                                <button type="button"
+                                                                    class="btn btn-danger-outline rounded-pill ">
+                                                                    <svg width="17" height="17" viewBox="0 0 17 17"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M2.5 4.5H14.5" stroke="#C23E23"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round" />
+                                                                        <path
+                                                                            d="M13.1654 4.5V13.8333C13.1654 14.5 12.4987 15.1667 11.832 15.1667H5.16536C4.4987 15.1667 3.83203 14.5 3.83203 13.8333V4.5"
+                                                                            stroke="#C23E23" stroke-linecap="round"
+                                                                            stroke-linejoin="round" />
+                                                                        <path
+                                                                            d="M5.83203 4.4987V3.16536C5.83203 2.4987 6.4987 1.83203 7.16536 1.83203H9.83203C10.4987 1.83203 11.1654 2.4987 11.1654 3.16536V4.4987"
+                                                                            stroke="#C23E23" stroke-width="1.33333"
+                                                                            stroke-linecap="round"
+                                                                            stroke-linejoin="round" />
+                                                                    </svg> Delete</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="d-flex flex-wrap gap-1 mt-4">
-                                    <div class="p-5 w-50 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-2 bg-dark"></div>
-                                    <div class="p-2 bg-dark"></div>
-                                    <div class="p-2 bg-dark"></div>
-                                    <div class="p-2 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-5 w-50 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-5 w-50 bg-dark"></div>
-                                    <div class="p-5 w-50 bg-dark"></div>
-                                    <div class="p-5 w-50 bg-dark"></div>
-                                    <div class="p-5 w-50 bg-dark"></div>
-                                    <div class="p-5 w-50 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-5 w-50 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                    <div class="p-5 bg-dark"></div>
-                                </div>
-
                             </div>
                     </main>
                     <div class="fixed-cta">

@@ -666,8 +666,61 @@ main .content-section .content .quote i {
     font-size: var(--t3-size);
 }
 
+/* What should we do with this data? Section */
+main .content-section .content .options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
 
+main .content-section .content .options .option-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    border: 1px solid var(--neutral-grey-7);
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    background: var(--primary-color);
+}
 
+main .content-section .content .options .option-item:hover {
+    background: var(--secondary-color-2);
+}
+
+main .content-section .content .options .option-item .detail {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+main .content-section .content .options .option-item .detail label {
+    font-size: var(--l1-size);
+    font-weight: var(--font-semibold);
+    color: var(--text-heading-color);
+}
+
+main .content-section .content .options .option-item .detail span {
+    font-size: var(--l2-size);
+    font-weight: var(--font-regular);
+    color: var(--text-body-color);
+}
+
+/* Use Saved Mapping Section */
+
+main .content-section .content .saved-mapping select {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    height: 0;
+}
+main .content-section .content .saved-mapping .form-floating{
+    border-right: 2px solid var(--neutral-grey-6);
+}
 
 /* Bottom-nav */
 .fixed-main-content .fixed-cta {
@@ -681,6 +734,9 @@ main .content-section .content .quote i {
     padding: 16px 56px;
 }
 
+/*++++++++++++++++++++++++++++++++++++++++++++++++
+                Button Styles
++++++++++++++++++++++++++++++++++++++++++++++++++*/
 /* Primary-button */
 button.btn.btn-primary {
     display: flex;
@@ -696,9 +752,58 @@ button.btn.btn-primary {
 
 button.btn.btn-primary:hover {
     background-color: var(--neutral-grey-3);
-
 }
 
 button.btn.btn-primary:focus {
     box-shadow: 0 0px 4px 2 rgba(0, 0, 0, 0.24)
+}
+
+button.btn.btn-primary-outline {
+    display: flex;
+    height: fit-content;
+    gap: 16px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    font-size: var(--l2-size);
+    background-color: var(--primary-color);
+    border: 1px solid var(--neutral-grey-6);
+    color: var(--text-heading-color);
+    font-weight: var(--font-medium);
+    line-height: var(--l2-line-height);
+}
+
+button.btn.btn-primary-outline:hover {
+    background-color: var(--secondary-color-2);
+}
+
+button.btn.btn-danger-outline {
+    display: flex;
+    height: fit-content;
+    gap: 16px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    font-size: var(--l2-size);
+    background-color: var(--primary-color);
+    border: 1px solid var(--semantic-error-5);
+    color: var(--text-heading-color);
+    font-weight: var(--font-medium);
+    line-height: var(--l2-line-height);
+}
+
+button.btn.btn-danger-outline:hover {
+    background-color: var(--semantic-error-10);
+}
+
+
+/* radio button*/
+input[type="radio"] {
+    accent-color: var(--secondary-color);
+    /* Change the color of the selected circle */
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
 }
