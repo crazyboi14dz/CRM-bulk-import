@@ -151,6 +151,29 @@ body {
     border-bottom-right-radius: 12px;
 }
 
+/* Small screens (max-width: 767px) */
+@media (max-width: 767px) {
+    .fixed-sidebar {
+        width: 80%;
+        /* Sidebar takes 80% width on mobile */
+        left: -80%;
+        /* Hidden off-screen by default */
+    }
+
+    body.sidebar-collapsed .fixed-sidebar {
+        left: 0;
+        /* Slides in when toggled */
+    }
+
+    .fixed-main-content {
+        left: 0;
+        /* Full width from the left */
+        width: 100%;
+        /* Ensures it spans the viewport */
+    }
+}
+
+
 .fixed-sidebar .sidebar-title {
     font-family: var(--font-sub);
     font-weight: var(--font-semibold);
@@ -321,6 +344,21 @@ body {
     /* Full viewport height */
     border-top-right-radius: 12px;
     border-bottom-right-radius: 12px;
+    transition: left 0.3s ease;
+    right: 0;
+    /* Ensure it stretches to the right edge */
+}
+
+@media (min-width: 768px) {
+    .fixed-main-content {
+        left: 16.67%;
+        /* Matches sidebar width when expanded */
+    }
+
+    body.sidebar-collapsed .fixed-main-content {
+        left: 96px;
+        /* Matches sidebar width when collapsed */
+    }
 }
 
 header {
@@ -397,6 +435,19 @@ header nav {
 header nav .breadcrumb {
     margin: 0;
 }
+
+header nav .breadcrumb .breadcrumb-item a {
+    font-size: var(--l1-size);
+    font-weight: var(--font-regular);
+    line-height: var(--l1-line-height);
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+header nav .breadcrumb .breadcrumb-item .active {
+    color: var(--text-body-color);
+}
+
 
 .fixed-main-content main {
     padding: 48px 32px;
@@ -626,6 +677,20 @@ main .content-section .content .template-list .template-item {
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.15);
 }
 
+main .content-section .content .template-list .template-item button.download {
+    border: 0;
+    background: none;
+    padding: 8px 8px;
+    border-radius: 100%;
+    transition: background 0.3s ease;
+    cursor: pointer;
+}
+
+main .content-section .content .template-list .template-item button.download:hover {
+    background: rgba(213, 226, 249, 0.5);
+    padding: 8px 8px;
+}
+
 main .content-section .content .template-list .template-item .detail {
     display: flex;
     justify-content: space-between;
@@ -718,7 +783,8 @@ main .content-section .content .saved-mapping select {
     padding-right: 16px;
     height: 0;
 }
-main .content-section .content .saved-mapping .form-floating{
+
+main .content-section .content .saved-mapping .form-floating {
     border-right: 2px solid var(--neutral-grey-6);
 }
 

@@ -320,8 +320,8 @@
                         </div>
                         <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
                             <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Library</li>
+                                <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Accounts</li>
                             </ol>
                         </nav>
                     </header>
@@ -515,10 +515,10 @@
                                                                     <span>Standard CSV import template</span>
                                                                 </div>
                                                             </div>
-                                                            <div class="download">
+                                                            <button class="download">
                                                                 <img src="Icons/download.svg"
                                                                     alt="download button for CSV Template">
-                                                            </div>
+                                                            </button>
                                                         </div>
                                                         <div class="template-item">
                                                             <div class="detail">
@@ -531,10 +531,10 @@
                                                                         datas</span>
                                                                 </div>
                                                             </div>
-                                                            <div class="download">
+                                                            <button class="download">
                                                                 <img src="Icons/download.svg"
                                                                     alt="download button for Dropdown List Template">
-                                                            </div>
+                                                            </button>
                                                         </div>
                                                     </div>
                                                     <div class="quote">
@@ -691,24 +691,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const sidebar = document.getElementById('sidebar');
-            const searchMenuInput = document.getElementById('search-menu-input');
-            const toggleButton = document.getElementById('collapse-arrow');
-
-            toggleButton.addEventListener('click', function () {
-                sidebar.classList.toggle('collapsed');
-                searchMenuInput.classList.toggle('collapsed');
-                const svg = toggleButton.querySelector('svg');
-                if (sidebar.classList.contains('collapsed')) {
-                    svg.style.transform = 'rotate(180deg)';
-                } else {
-                    svg.style.transform = 'rotate(0deg)';
-                }
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
