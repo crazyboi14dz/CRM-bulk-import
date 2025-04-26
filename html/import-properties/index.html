@@ -11,6 +11,43 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/import-history.css">
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.2/semantic.min.css" />
+
+
+
+    <style>
+        /* .dt-scroll .dt-scroll-head {
+            border-top-right-radius: 8px;
+            border-top-left-radius: 8px;
+        } */
+
+        div.dt-container.dt-empty-footer .dt-scroll-body {
+            border-bottom: 0px;
+            border-bottom-right-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
+
+        /*Number of records to view Dropdown and entries per page gaping*/
+        .dt-length {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+        }
+
+        main .content-section .table {
+            border-radius: 0 !important;
+            /* Ensure no border radius on the table */
+        }
+
+        @media screen and (max-width: 767px) {
+            div.dt-container div.dt-layout-row:not(.dt-layout-table) {
+                display: flex;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -332,7 +369,7 @@
                                 <div class="col-md-12">
                                     <div class="progress-section">
                                         <div class="progress-icons">
-                                            <div class="icon">
+                                            <div class="icon active">
                                                 <svg width="25" height="24" viewBox="0 0 25 24"
                                                     xmlns="http://www.w3.org/2000/svg">
                                                     <path
@@ -423,7 +460,7 @@
                                             <div class="progress-bar-fill" style="width: 30%;"></div>
                                         </div>
                                         <div class="progress-text">
-                                            <span class="text">Choose File</span>
+                                            <span class="text active">Choose File</span>
                                             <span class="text active">Import Properties</span>
                                             <span class="text">Fields Mapping</span>
                                             <span class="text">Check Duplicate</span>
@@ -431,8 +468,8 @@
                                         </div>
                                     </div>
                                     <div class="content-section">
-                                        <div class="row">
-                                            <div class="col-md col-12">
+                                        <div class="row gap-4">
+                                            <div class="col-12">
                                                 <div class="content">
                                                     <div class="d-flex align-items-center justify-content-between">
                                                         <div class="head">
@@ -538,60 +575,446 @@
 
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
                                             <div class="col-12">
-                                                <div class="content">
-                                                    <div class="head">
-                                                        <div class="icon">
-                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                                                xmlns="http://www.w3.org/2000/svg">
-                                                                <path
-                                                                    d="M12.218 2H11.778C11.2476 2 10.7389 2.21071 10.3638 2.58579C9.98876 2.96086 9.77805 3.46957 9.77805 4V4.18C9.77769 4.53073 9.68511 4.87519 9.50959 5.17884C9.33407 5.48248 9.08179 5.73464 8.77805 5.91L8.34805 6.16C8.04401 6.33554 7.69912 6.42795 7.34805 6.42795C6.99698 6.42795 6.65209 6.33554 6.34805 6.16L6.19805 6.08C5.73911 5.81526 5.19389 5.74344 4.68205 5.88031C4.17022 6.01717 3.7336 6.35154 3.46805 6.81L3.24805 7.19C2.98331 7.64893 2.91149 8.19416 3.04836 8.706C3.18522 9.21783 3.51958 9.65445 3.97805 9.92L4.12805 10.02C4.43032 10.1945 4.68167 10.4451 4.8571 10.7468C5.03253 11.0486 5.12594 11.391 5.12805 11.74V12.25C5.12945 12.6024 5.0377 12.949 4.86209 13.2545C4.68649 13.5601 4.43326 13.8138 4.12805 13.99L3.97805 14.08C3.51958 14.3456 3.18522 14.7822 3.04836 15.294C2.91149 15.8058 2.98331 16.3511 3.24805 16.81L3.46805 17.19C3.7336 17.6485 4.17022 17.9828 4.68205 18.1197C5.19389 18.2566 5.73911 18.1847 6.19805 17.92L6.34805 17.84C6.65209 17.6645 6.99698 17.5721 7.34805 17.5721C7.69912 17.5721 8.04401 17.6645 8.34805 17.84L8.77805 18.09C9.08179 18.2654 9.33407 18.5175 9.50959 18.8212C9.68511 19.1248 9.77769 19.4693 9.77805 19.82V20C9.77805 20.5304 9.98876 21.0391 10.3638 21.4142C10.7389 21.7893 11.2476 22 11.778 22H12.218C12.7485 22 13.2572 21.7893 13.6323 21.4142C14.0073 21.0391 14.218 20.5304 14.218 20V19.82C14.2184 19.4693 14.311 19.1248 14.4865 18.8212C14.662 18.5175 14.9143 18.2654 15.218 18.09L15.648 17.84C15.9521 17.6645 16.297 17.5721 16.648 17.5721C16.9991 17.5721 17.344 17.6645 17.648 17.84L17.798 17.92C18.257 18.1847 18.8022 18.2566 19.314 18.1197C19.8259 17.9828 20.2625 17.6485 20.528 17.19L20.748 16.8C21.0128 16.3411 21.0846 15.7958 20.9477 15.284C20.8109 14.7722 20.4765 14.3356 20.018 14.07L19.868 13.99C19.5628 13.8138 19.3096 13.5601 19.134 13.2545C18.9584 12.949 18.8667 12.6024 18.868 12.25V11.75C18.8667 11.3976 18.9584 11.051 19.134 10.7455C19.3096 10.4399 19.5628 10.1862 19.868 10.01L20.018 9.92C20.4765 9.65445 20.8109 9.21783 20.9477 8.706C21.0846 8.19416 21.0128 7.64893 20.748 7.19L20.528 6.81C20.2625 6.35154 19.8259 6.01717 19.314 5.88031C18.8022 5.74344 18.257 5.81526 17.798 6.08L17.648 6.16C17.344 6.33554 16.9991 6.42795 16.648 6.42795C16.297 6.42795 15.9521 6.33554 15.648 6.16L15.218 5.91C14.9143 5.73464 14.662 5.48248 14.4865 5.17884C14.311 4.87519 14.2184 4.53073 14.218 4.18V4C14.218 3.46957 14.0073 2.96086 13.6323 2.58579C13.2572 2.21071 12.7485 2 12.218 2Z"
-                                                                    stroke="#0944A1" stroke-width="2"
-                                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                                                <path
-                                                                    d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
-                                                                    stroke="#0944A1" stroke-width="2"
-                                                                    stroke-linecap="round" stroke-linejoin="round" />
-                                                            </svg>
-                                                        </div>
-                                                        <span>What should we do with this data?</span>
-                                                    </div>
-                                                    <p>Select how the system should handle your imported records:</p>
-
-                                                    <div class="options">
-                                                        <label class="option-item" for="create-new">
-                                                            <div class="detail">
-                                                                <div class="title">Create new records only</div>
-                                                                <span>Skip records that already exist in the
-                                                                    system</span>
-                                                            </div>
-                                                            <input type="radio" id="create-new" name="action"
-                                                                value="create-new" checked>
-                                                        </label>
-                                                        <label class="option-item" for="update-existing">
-                                                            <div class="detail">
-                                                                <div class="title">Update if ID matches
-                                                                    records</div>
-                                                                <span>Update existing records with matching IDs</span>
-                                                            </div>
-                                                            <input type="radio" id="update-existing" name="action"
-                                                                value="update-existing">
-                                                        </label>
-                                                        <label class="option-item" for="create-update">
-                                                            <div class="detail">
-                                                                <div class="title">Create new and update
-                                                                    existing records</div>
-                                                                <span>Adds new records and updates those with matching
-                                                                    IDs.</span>
-                                                            </div>
-                                                            <input type="radio" id="create-update" name="action"
-                                                                value="create-update">
-                                                        </label>
-                                                    </div>
-
-                                                </div>
+                                                <table id="datableImportProperties"
+                                                    class="display nowrap ui selectable striped celled table dataTable unstackable"
+                                                    style="width:100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th><img src="/storage/Icons/id-card-line.svg" alt="id card icon">&nbsp; Id </th>
+                                                            <th><img src="/storage/Icons/fi_phone.svg" alt="id card icon">&nbsp; Contact Name</th>
+                                                            <th><img src="/storage/Icons/briefcase.svg" alt="id card icon">&nbsp; Designation</th>
+                                                            <th><img src="/storage/Icons/fi_list.svg" alt="id card icon">&nbsp; Other Designation</th>
+                                                            <th><img src="/storage/Icons/fi_user.svg" alt="id card icon">&nbsp; Account Name</th>
+                                                            <th><img src="/storage/Icons/fi_phone.svg" alt="id card icon">&nbsp; Mobile Number</th>
+                                                            <th><img src="/storage/Icons/email.svg" alt="id card icon">&nbsp; Email</th>
+                                                            <th><img src="/storage/Icons/fi_link.svg" alt="id card icon">&nbsp; URL</th>
+                                                            <th><img src="/storage/Icons/fi_calendar.svg" alt="id card icon">&nbsp; Date</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>ca5e4d53-8172-4666-8</td>
+                                                            <td>Tiger Nixon</td>
+                                                            <td>System Architect</td>
+                                                            <td>
+                                                                <span>Lead Developer</span>
+                                                                <span>System Architect</span>
+                                                            </td>
+                                                            <td>Tiger.Nixon42</td>
+                                                            <td>+1-555-123-4567</td>
+                                                            <td>t.nixon@datatables.net</td>
+                                                            <td>https://nixon.example.com</td>
+                                                            <td>2011-04-25</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>8422</td>
+                                                            <td>Garrett Winters</td>
+                                                            <td>Senior Developer</td>
+                                                            <td>
+                                                                <span>Backend Developer</span>
+                                                                <span>Database Admin</span>
+                                                            </td>
+                                                            <td>Garrett.Winters87</td>
+                                                            <td>+81-3-1234-5678</td>
+                                                            <td>g.winters@datatables.net</td>
+                                                            <td>https://winters.example.com</td>
+                                                            <td>2011-07-25</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>1562</td>
+                                                            <td>Ashton Cox</td>
+                                                            <td>Technical Author</td>
+                                                            <td>
+                                                                <span>Documentation Lead</span>
+                                                                <span>Content Creator</span>
+                                                            </td>
+                                                            <td>Ashton.Cox35</td>
+                                                            <td>+1-415-555-7890</td>
+                                                            <td>a.cox@datatables.net</td>
+                                                            <td>https://cox.example.com</td>
+                                                            <td>2009-01-12</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2290</td>
+                                                            <td>Cedric Kelly</td>
+                                                            <td>Senior Javascript Developer</td>
+                                                            <td>
+                                                                <span>Frontend Lead</span>
+                                                                <span>UI Specialist</span>
+                                                            </td>
+                                                            <td>Cedric.Kelly90</td>
+                                                            <td>+1-212-456-7890</td>
+                                                            <td>c.kelly@datatables.net</td>
+                                                            <td>https://kelly.example.com</td>
+                                                            <td>2012-03-29</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>6741</td>
+                                                            <td>Airi Satou</td>
+                                                            <td>Accountant</td>
+                                                            <td>
+                                                                <span>Financial Analyst</span>
+                                                                <span>Budget Manager</span>
+                                                            </td>
+                                                            <td>Airi.Satou29</td>
+                                                            <td>+81-3-8765-4321</td>
+                                                            <td>a.satou@datatables.net</td>
+                                                            <td>https://satou.example.com</td>
+                                                            <td>2008-11-28</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>3814</td>
+                                                            <td>Brielle Williamson</td>
+                                                            <td>Integration Specialist</td>
+                                                            <td>
+                                                                <span>API Developer</span>
+                                                                <span>Systems Integrator</span>
+                                                            </td>
+                                                            <td>Brielle.Williamson40</td>
+                                                            <td>+44-20-1234-5678</td>
+                                                            <td>b.williamson@datatables.net</td>
+                                                            <td>https://williamson.example.com</td>
+                                                            <td>2012-12-02</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>9497</td>
+                                                            <td>Herrod Chandler</td>
+                                                            <td>Sales Assistant</td>
+                                                            <td>
+                                                                <span>Account Manager</span>
+                                                                <span>Customer Relations</span>
+                                                            </td>
+                                                            <td>Herrod.Chandler74</td>
+                                                            <td>+1-415-789-4561</td>
+                                                            <td>h.chandler@datatables.net</td>
+                                                            <td>https://chandler.example.com</td>
+                                                            <td>2012-08-06</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>4395</td>
+                                                            <td>Rhona Davidson</td>
+                                                            <td>Data Scientist</td>
+                                                            <td>
+                                                                <span>ML Engineer</span>
+                                                                <span>Data Analyst</span>
+                                                            </td>
+                                                            <td>Rhona.Davidson98</td>
+                                                            <td>+44-131-765-4321</td>
+                                                            <td>r.davidson@datatables.net</td>
+                                                            <td>https://davidson.example.com</td>
+                                                            <td>2010-10-14</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>8291</td>
+                                                            <td>Colleen Hurst</td>
+                                                            <td>Product Manager</td>
+                                                            <td>
+                                                                <span>Project Lead</span>
+                                                                <span>Scrum Master</span>
+                                                            </td>
+                                                            <td>Colleen.Hurst48</td>
+                                                            <td>+1-415-678-9012</td>
+                                                            <td>c.hurst@datatables.net</td>
+                                                            <td>https://hurst.example.com</td>
+                                                            <td>2009-09-15</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2769</td>
+                                                            <td>Sonya Frost</td>
+                                                            <td>Software Engineer</td>
+                                                            <td>
+                                                                <span>Full Stack Developer</span>
+                                                                <span>DevOps Engineer</span>
+                                                            </td>
+                                                            <td>Sonya.Frost29</td>
+                                                            <td>+44-20-9876-5432</td>
+                                                            <td>s.frost@datatables.net</td>
+                                                            <td>https://frost.example.com</td>
+                                                            <td>2008-12-13</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>6832</td>
+                                                            <td>Jena Gaines</td>
+                                                            <td>Office Manager</td>
+                                                            <td>
+                                                                <span>Administrative Lead</span>
+                                                                <span>Facilities Manager</span>
+                                                            </td>
+                                                            <td>Jena.Gaines52</td>
+                                                            <td>+1-212-567-8901</td>
+                                                            <td>j.gaines@datatables.net</td>
+                                                            <td>https://gaines.example.com</td>
+                                                            <td>2008-12-19</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>5384</td>
+                                                            <td>Quinn Flynn</td>
+                                                            <td>Support Engineer</td>
+                                                            <td>
+                                                                <span>Tech Support</span>
+                                                                <span>Customer Success</span>
+                                                            </td>
+                                                            <td>Quinn.Flynn47</td>
+                                                            <td>+44-131-987-6543</td>
+                                                            <td>q.flynn@datatables.net</td>
+                                                            <td>https://flynn.example.com</td>
+                                                            <td>2013-03-03</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>7821</td>
+                                                            <td>Charde Marshall</td>
+                                                            <td>Regional Director</td>
+                                                            <td>
+                                                                <span>Sales Director</span>
+                                                                <span>Business Development</span>
+                                                            </td>
+                                                            <td>Charde.Marshall27</td>
+                                                            <td>+1-415-234-5678</td>
+                                                            <td>c.marshall@datatables.net</td>
+                                                            <td>https://marshall.example.com</td>
+                                                            <td>2008-10-16</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>3059</td>
+                                                            <td>Haley Kennedy</td>
+                                                            <td>UX Designer</td>
+                                                            <td>
+                                                                <span>UI Designer</span>
+                                                                <span>User Researcher</span>
+                                                            </td>
+                                                            <td>Haley.Kennedy73</td>
+                                                            <td>+44-20-4567-8901</td>
+                                                            <td>h.kennedy@datatables.net</td>
+                                                            <td>https://kennedy.example.com</td>
+                                                            <td>2012-12-18</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>4721</td>
+                                                            <td>Tatyana Fitzpatrick</td>
+                                                            <td>QA Engineer</td>
+                                                            <td>
+                                                                <span>Test Automation</span>
+                                                                <span>Quality Assurance</span>
+                                                            </td>
+                                                            <td>Tatyana.Fitzpatrick27</td>
+                                                            <td>+1-212-345-6789</td>
+                                                            <td>t.fitzpatrick@datatables.net</td>
+                                                            <td>https://fitzpatrick.example.com</td>
+                                                            <td>2010-03-17</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>9608</td>
+                                                            <td>Michael Silva</td>
+                                                            <td>Marketing Designer</td>
+                                                            <td>
+                                                                <span>Graphic Designer</span>
+                                                                <span>Content Creator</span>
+                                                            </td>
+                                                            <td>Michael.Silva71</td>
+                                                            <td>+81-3-2345-6789</td>
+                                                            <td>m.silva@datatables.net</td>
+                                                            <td>https://silva.example.com</td>
+                                                            <td>2012-11-27</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>1721</td>
+                                                            <td>Paul Byrd</td>
+                                                            <td>Chief Financial Officer</td>
+                                                            <td>
+                                                                <span>Finance Director</span>
+                                                                <span>Executive Team</span>
+                                                            </td>
+                                                            <td>Paul.Byrd84</td>
+                                                            <td>+44-131-876-5432</td>
+                                                            <td>p.byrd@datatables.net</td>
+                                                            <td>https://byrd.example.com</td>
+                                                            <td>2010-06-09</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>3246</td>
+                                                            <td>Gloria Little</td>
+                                                            <td>HR Manager</td>
+                                                            <td>
+                                                                <span>Talent Acquisition</span>
+                                                                <span>Employee Relations</span>
+                                                            </td>
+                                                            <td>Gloria.Little62</td>
+                                                            <td>+1-415-890-1234</td>
+                                                            <td>g.little@datatables.net</td>
+                                                            <td>https://little.example.com</td>
+                                                            <td>2009-04-10</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>8822</td>
+                                                            <td>Bradley Greer</td>
+                                                            <td>DevOps Engineer</td>
+                                                            <td>
+                                                                <span>Infrastructure Specialist</span>
+                                                                <span>Cloud Architect</span>
+                                                            </td>
+                                                            <td>Bradley.Greer48</td>
+                                                            <td>+44-20-5678-9012</td>
+                                                            <td>b.greer@datatables.net</td>
+                                                            <td>https://greer.example.com</td>
+                                                            <td>2012-10-13</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2941</td>
+                                                            <td>Dai Rios</td>
+                                                            <td>Network Administrator</td>
+                                                            <td>
+                                                                <span>Security Specialist</span>
+                                                                <span>IT Infrastructure</span>
+                                                            </td>
+                                                            <td>Dai.Rios31</td>
+                                                            <td>+81-3-3456-7890</td>
+                                                            <td>d.rios@datatables.net</td>
+                                                            <td>https://rios.example.com</td>
+                                                            <td>2012-09-26</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>5083</td>
+                                                            <td>Jenette Caldwell</td>
+                                                            <td>Project Manager</td>
+                                                            <td>
+                                                                <span>Agile Coach</span>
+                                                                <span>Team Lead</span>
+                                                            </td>
+                                                            <td>Jenette.Caldwell21</td>
+                                                            <td>+44-131-765-0987</td>
+                                                            <td>j.caldwell@datatables.net</td>
+                                                            <td>https://caldwell.example.com</td>
+                                                            <td>2011-09-03</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>6178</td>
+                                                            <td>Yuri Berry</td>
+                                                            <td>Mobile Developer</td>
+                                                            <td>
+                                                                <span>iOS Developer</span>
+                                                                <span>Android Developer</span>
+                                                            </td>
+                                                            <td>Yuri.Berry83</td>
+                                                            <td>+1-212-456-0123</td>
+                                                            <td>y.berry@datatables.net</td>
+                                                            <td>https://berry.example.com</td>
+                                                            <td>2009-06-25</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>4965</td>
+                                                            <td>Caesar Vance</td>
+                                                            <td>Business Analyst</td>
+                                                            <td>
+                                                                <span>Data Analyst</span>
+                                                                <span>Requirements Specialist</span>
+                                                            </td>
+                                                            <td>Caesar.Vance49</td>
+                                                            <td>+1-415-567-8901</td>
+                                                            <td>c.vance@datatables.net</td>
+                                                            <td>https://vance.example.com</td>
+                                                            <td>2011-12-12</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>3324</td>
+                                                            <td>Doris Wilder</td>
+                                                            <td>Sales Manager</td>
+                                                            <td>
+                                                                <span>Account Executive</span>
+                                                                <span>Business Development</span>
+                                                            </td>
+                                                            <td>Doris.Wilder70</td>
+                                                            <td>+44-20-6789-0123</td>
+                                                            <td>d.wilder@datatables.net</td>
+                                                            <td>https://wilder.example.com</td>
+                                                            <td>2010-09-20</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>9260</td>
+                                                            <td>Angelica Ramos</td>
+                                                            <td>Chief Executive Officer</td>
+                                                            <td>
+                                                                <span>Executive Team</span>
+                                                                <span>Board Member</span>
+                                                            </td>
+                                                            <td>Angelica.Ramos74</td>
+                                                            <td>+44-131-543-2109</td>
+                                                            <td>a.ramos@datatables.net</td>
+                                                            <td>https://ramos.example.com</td>
+                                                            <td>2009-10-09</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>7741</td>
+                                                            <td>Gavin Joyce</td>
+                                                            <td>Information Security Specialist</td>
+                                                            <td>
+                                                                <span>Security Analyst</span>
+                                                                <span>Compliance Officer</span>
+                                                            </td>
+                                                            <td>Gavin.Joyce55</td>
+                                                            <td>+81-3-4567-8901</td>
+                                                            <td>g.joyce@datatables.net</td>
+                                                            <td>https://joyce.example.com</td>
+                                                            <td>2010-12-22</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>1582</td>
+                                                            <td>Jennifer Chang</td>
+                                                            <td>Database Administrator</td>
+                                                            <td>
+                                                                <span>Data Engineer</span>
+                                                                <span>SQL Developer</span>
+                                                            </td>
+                                                            <td>Jennifer.Chang54</td>
+                                                            <td>+1-212-567-0123</td>
+                                                            <td>j.chang@datatables.net</td>
+                                                            <td>https://chang.example.com</td>
+                                                            <td>2010-11-14</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>8052</td>
+                                                            <td>Brenden Wagner</td>
+                                                            <td>Technical Lead</td>
+                                                            <td>
+                                                                <span>Senior Developer</span>
+                                                                <span>Architecture Specialist</span>
+                                                            </td>
+                                                            <td>Brenden.Wagner76</td>
+                                                            <td>+1-415-678-9012</td>
+                                                            <td>b.wagner@datatables.net</td>
+                                                            <td>https://wagner.example.com</td>
+                                                            <td>2011-06-07</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>2468</td>
+                                                            <td>Fiona Green</td>
+                                                            <td>Chief Operating Officer</td>
+                                                            <td>
+                                                                <span>Operations Director</span>
+                                                                <span>Executive Team</span>
+                                                            </td>
+                                                            <td>Fiona.Green17</td>
+                                                            <td>+44-20-7890-1234</td>
+                                                            <td>f.green@datatables.net</td>
+                                                            <td>https://green.example.com</td>
+                                                            <td>2010-03-11</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>5736</td>
+                                                            <td>Shou Itou</td>
+                                                            <td>Research Engineer</td>
+                                                            <td>
+                                                                <span>R&D Specialist</span>
+                                                                <span>Innovation Lead</span>
+                                                            </td>
+                                                            <td>Shou.Itou48</td>
+                                                            <td>+81-3-5678-9012</td>
+                                                            <td>s.itou@datatables.net</td>
+                                                            <td>https://itou.example.com</td>
+                                                            <td>2011-08-14</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
                                             </div>
                                         </div>
                                     </div>
@@ -627,7 +1050,20 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.2/semantic.min.js"></script>
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.semanticui.js"></script>
     <script src="/js/script.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Initialize DataTables
+            $('#datableImportProperties').DataTable({
+                scrollX: true
+            });
+
+        });
+    </script>
 </body>
 
 </html>
