@@ -180,7 +180,7 @@ body {
     font-size: var(--t3-size);
     line-height: var(--t3-line-height);
     color: var(--text-white-color);
-    margin-bottom: 0;
+    margin: 0;
 }
 
 .fixed-sidebar .sidebar-menu {
