@@ -137,6 +137,8 @@ body {
                             Sidebar Styles 
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 .fixed-sidebar {
+    display: flex;
+    flex-direction: column;
     z-index: 1;
     position: fixed;
     top: 0;
@@ -154,14 +156,17 @@ body {
 /* Small screens (max-width: 767px) */
 @media (max-width: 767px) {
     .fixed-sidebar {
-        width: 80%;
+        width: 80%; 
         /* Sidebar takes 80% width on mobile */
-        left: -80%;
+        /* left: -80%; */
+        transform: translateX(-100%);
         /* Hidden off-screen by default */
+        transition: transform 0.3s ease;
     }
 
     body.sidebar-collapsed .fixed-sidebar {
-        left: 0;
+        /* left: 0; */
+        transform: translateX(0);
         /* Slides in when toggled */
     }
 
@@ -175,6 +180,7 @@ body {
 
 
 .fixed-sidebar .sidebar-title {
+    flex: 0 0 auto; /* Fixed size, no growing */
     font-family: var(--font-sub);
     font-weight: var(--font-semibold);
     font-size: var(--t3-size);
@@ -184,7 +190,7 @@ body {
 }
 
 .fixed-sidebar .sidebar-menu {
-    height: 57vh;
+    flex: 1; /* Fills available space */
     overflow-y: scroll;
 }
 
@@ -225,6 +231,7 @@ body {
     background: var(--primary-color);
     border-radius: 12px;
     overflow: hidden;
+    flex: 0 0 auto; /* Prevents these from growing */
 }
 
 .fixed-sidebar .action .action-item {
