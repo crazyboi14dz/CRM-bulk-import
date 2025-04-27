@@ -1,0 +1,46 @@
+.mapping-indicator {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.mapping-indicator .mapping-indicator-item {
+    display: flex;
+    align-items: center;
+}
+
+.mapping-indicator .mapping-indicator-item .mapping-indicator-icon {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    background: var(--semantic-success-9);
+    border: 1px solid var(--semantic-success-7);
+    border-radius: 50%;
+}
+
+.mapping-indicator .mapping-indicator-item:nth-child(2) .mapping-indicator-icon {
+    background: var(--semantic-error-9);
+    border: 1px solid var(--semantic-error-7);
+}
+
+/* Row Background Change when Not Mapped and Mapped */
+
+/* Reset default row and cell backgrounds */
+#fieldMappingTable.ui.table tbody tr,
+#fieldMappingTable.ui.table tbody tr td {
+    background: none !important;
+}
+
+/* Style for "Not Mapped" rows */
+#fieldMappingTable.ui.table tbody tr.not-mapped,
+#fieldMappingTable.ui.table tbody tr.not-mapped td {
+    background-color: #F3C7BE !important;
+}
+
+/* Style for mapped rows */
+#fieldMappingTable.ui.table tbody tr.mapped,
+#fieldMappingTable.ui.table tbody tr.mapped td {
+    background-color: #D6F3BE !important;
+    /* Light green */
+}

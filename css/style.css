@@ -836,7 +836,7 @@ button.btn.btn-primary-outline {
     display: flex;
     height: fit-content;
     gap: 16px;
-    width: 100%;
+    width: fit-content;
     justify-content: center;
     align-items: center;
     padding: 12px;
@@ -856,7 +856,7 @@ button.btn.btn-danger-outline {
     display: flex;
     height: fit-content;
     gap: 16px;
-    width: 100%;
+    width: fit-content;
     justify-content: center;
     align-items: center;
     padding: 12px;
@@ -901,43 +901,4 @@ input[type="radio"] {
     width: 20px;
     height: 20px;
     cursor: pointer;
-}
-
-
-/* Custom Dropdown */
-.custom-dropdown {
-    width: 220px; /* Adjusted width to match the image */
-}
-.dropdown-toggle {
-    width: 100%;
-    text-align: left;
-    background-color: #fff;
-    border: 1px solid #ced4da;
-    color: #000;
-    padding: 8px 12px;
-    border-radius: 8px;
-}
-.dropdown-toggle::after {
-    float: right;
-    margin-top: 6px;
-}
-.dropdown-menu {
-    width: 100%;
-    border-radius: 8px;
-    margin-top: 2px;
-}
-.dropdown-item {
-    padding: 8px 12px;
-    color: #000;
-}
-.dropdown-item:hover {
-    background-color: #f8f9fa;
-}
-.calendar-icon {
-    margin-right: 8px;
-}
-.recommended {
-    color: #6c757d;
-    font-size: 0.9em;
-    margin-left: 4px;
 }
