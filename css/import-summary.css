@@ -1,0 +1,92 @@
+.metric .metric-card {
+    display: flex;
+    border: 1px solid var(--neutral-grey-8);
+    justify-content: space-between;
+    padding: 16px 12px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    background: var(--primary-color);
+}
+
+.metric .metric-card .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.metric .metric-card .left span {
+    font-size: var(--b3-size);
+    font-weight: var(--font-regular);
+    color: var(--text-body-color);
+}
+
+.metric .metric-card .left h5 {
+    font-size: var(--b1-size);
+    font-weight: var(--font-bold);
+    color: var(--secondary-color);
+}
+
+.metric:nth-child(2) .metric-card .left h5 {
+    color: var(--semantic-success-3);
+}
+
+.metric:nth-child(3) .metric-card .left h5 {
+    color: var(--semantic-warning-4);
+}
+
+.metric:nth-child(4) .metric-card .left h5 {
+    color: var(--semantic-error-4);
+}
+
+.metric .metric-card .left h5 {
+    font-size: var(--b1-size);
+    font-weight: var(--font-bold);
+    color: var(--secondary-color);
+}
+
+.metric .metric-card .right {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    flex-direction: column;
+}
+
+.metric .metric-card .right a {
+    text-align: end;
+    font-size: var(--l3-size);
+    font-weight: var(--font-regular);
+    color: var(--secondary-color);
+}
+
+.metric .metric-card .right a:hover {
+    text-decoration: underline;
+}
+
+
+.metric .metric-card .right .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    background-color: var(--secondary-color-2);
+}
+
+.metric:nth-child(2) .metric-card .right .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 100%;
+    background-color: var(--semantic-success-9);
+}
+
+.metric:nth-child(3) .metric-card .right .icon {
+    background-color: var(--semantic-warning-9);
+}
+
+.metric:nth-child(4) .metric-card .right .icon {
+    background-color: var(--semantic-error-9);
+}
