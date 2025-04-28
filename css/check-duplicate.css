@@ -1,3 +1,84 @@
+.tip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background: var(--semantic-warning-8);
+    padding: 8px 10px;
+    border-radius: 50px;
+}
+
+.tip span {
+    padding-top: 4px;
+    font-size: var(--l2-size);
+    line-height: var(--l2-line-height);
+    font-weight: var(--font-regular);
+    color: var(--text-heading-color);
+}
+
+/* Style for Field to Check and Available Field */
+.field-card .card-header{
+    background: var(--neutral-grey-8);
+    color: var(--text-heading-color);
+    font-size: var(--b1-size);
+    line-height: var(--b1-line-height);
+    font-weight: var(--font-medium);
+}
+
+
+/* Search Style of Available Fields */
+#field-search .input-group-text,
+#field-search .form-control {
+    border: none
+}
+
+#field-search .input-group-text {
+    border-radius: 100% 0 0 100%;
+    border-right: 1px solid var(--neutral-grey-8) !important;
+}
+
+#field-search .input-group {
+    border: 1px solid var(--neutral-grey-8);
+    border-radius: 50px;
+}
+
+/* placeholder of field checks */
+
+.placeholder-field-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 50px;
+    flex-direction: column;
+}
+
+.placeholder-field-check .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 100%;
+    background: var(--neutral-grey-8);
+}
+
+.placeholder-field-check .title {
+    font-size: var(--b1-size);
+    text-align: center;
+    line-height: var(--b1-line-height);
+    font-weight: var(--font-bold);
+
+}
+
+.placeholder-field-check .description {
+    font-size: var(--b3-size);
+    text-align: center;
+    line-height: var(--b3-line-height);
+    font-weight: var(--font-regular);
+}
+
+/* Field Items for field checks */
 .field-item {
     display: flex;
     align-items: center;
@@ -44,23 +125,23 @@
 }
 
 /* Green for plus button */
-#suggestedFields .field-item .add-field svg {
+.field-item .add-field svg {
     border: 2px solid var(--text-body-color);
     border-radius: 100%;
     transition: background 0.3s ease, fill 0.3s ease;
 }
 
-#suggestedFields .field-item .add-field svg path {
+.field-item .add-field svg path {
     fill: var(--text-body-color);
     transition: fill 0.3s ease;
     /* Green for plus button */
 }
 
-#suggestedFields .field-item .add-field svg:hover {
+.field-item .add-field svg:hover {
     border: 2px solid var(--secondary-color);
     background: var(--secondary-color);
 }
 
-#suggestedFields .field-item .add-field svg:hover path {
+.field-item .add-field svg:hover path {
     fill: var(--primary-color);
 }
