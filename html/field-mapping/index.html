@@ -16,7 +16,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fomantic-ui/2.9.2/semantic.min.css" />
 
     <style>
-
         /*Number of records to view Dropdown and entries per page gaping*/
         .dt-length {
             display: flex;
@@ -254,6 +253,82 @@
                     <header>
                         <div class="d-flex justify-content-between align-items-center border-bottom top-nav">
                             <h2>Fields Mapping</h2>
+                            <div class="search-container">
+                                <input type="text" id="searchInput" class="search-input"
+                                    placeholder="Search anything...">
+                                <i class="ri-search-line search-icon"></i>
+                                <div id="searchDropdown" class="dropdown-menu">
+                                    <!-- Collapsed State Content -->
+                                    <div id="recentSearches">
+                                        <div class="recent-header">
+                                            <span class="title">Recent Search</span>
+                                            <span class="clear-all">Clear All</span>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <i class="ri-user-line item-icon"></i>
+                                            <div class="item-details">
+                                                <div>Raj Shekhawat</div>
+                                                <div class="item-type">Leads | Last contacted on Jan 8, 2025</div>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <i class="ri-building-line item-icon"></i>
+                                            <div class="item-details">
+                                                <div>NJ Group</div>
+                                                <div class="item-type">Company | Premium | Active</div>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <i class="ri-file-text-line item-icon"></i>
+                                            <div class="item-details">
+                                                <div>Import Template #2341</div>
+                                                <div class="item-type">Template | Created on Jan 2, 2025</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Searching State Content -->
+                                    <div id="searchResults" style="display: none;">
+                                        <div class="recent-header">
+                                            <span>Your searched results for "<span id="searchQuery"></span>"</span>
+                                        </div>
+                                        <div class="search-result-item dropdown-item">
+                                            <i class="ri-user-line item-icon"></i>
+                                            <div class="item-details">
+                                                <div>Nilawati Govind</div>
+                                                <div class="item-type">Leads | Account | Inactive</div>
+                                            </div>
+                                        </div>
+                                        <div class="search-result-item dropdown-item">
+                                            <i class="ri-user-line item-icon"></i>
+                                            <div class="item-details">
+                                                <div>Nilawati Godse</div>
+                                                <div class="item-type">Leads | Account | Active</div>
+                                            </div>
+                                        </div>
+                                        <div class="search-result-item dropdown-item">
+                                            <i class="ri-user-line item-icon"></i>
+                                            <div class="item-details">
+                                                <div>Nilawati Narayan</div>
+                                                <div class="item-type">Leads | Account | Active</div>
+                                            </div>
+                                        </div>
+                                        <div class="search-result-item dropdown-item">
+                                            <i class="ri-user-line item-icon"></i>
+                                            <div class="item-details">
+                                                <div>Nilawati Swami</div>
+                                                <div class="item-type">Leads | Account | Active</div>
+                                            </div>
+                                        </div>
+                                        <div class="dropdown-item">
+                                            <i class="ri-arrow-right-line item-icon"></i>
+                                            <div class="item-details">
+                                                <div>Go to Leads Page</div>
+                                                <div class="item-type">Leads</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="d-flex align-items-center main-head">
                                 <ul class="main-head-icon">
                                     <li>

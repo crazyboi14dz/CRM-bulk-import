@@ -156,7 +156,7 @@ body {
 /* Small screens (max-width: 767px) */
 @media (max-width: 767px) {
     .fixed-sidebar {
-        width: 80%; 
+        width: 80%;
         /* Sidebar takes 80% width on mobile */
         /* left: -80%; */
         transform: translateX(-100%);
@@ -180,7 +180,8 @@ body {
 
 
 .fixed-sidebar .sidebar-title {
-    flex: 0 0 auto; /* Fixed size, no growing */
+    flex: 0 0 auto;
+    /* Fixed size, no growing */
     font-family: var(--font-sub);
     font-weight: var(--font-semibold);
     font-size: var(--t3-size);
@@ -190,7 +191,8 @@ body {
 }
 
 .fixed-sidebar .sidebar-menu {
-    flex: 1; /* Fills available space */
+    flex: 1;
+    /* Fills available space */
     overflow-y: scroll;
 }
 
@@ -208,11 +210,14 @@ body {
 .fixed-sidebar .search-menu input {
     /* border-left: 0; */
     background-color: rgb(191, 191, 191, 25%);
+    caret-color: var(--text-white-color);
+    color: var(--text-white-color);
     border-color: rgb(191, 191, 191, 75%);
 }
 
 .fixed-sidebar .search-menu input::placeholder {
     color: var(--neutral-grey-5);
+    opacity: 0.51;
 }
 
 .fixed-sidebar .search-menu span svg {
@@ -231,7 +236,8 @@ body {
     background: var(--primary-color);
     border-radius: 12px;
     overflow: hidden;
-    flex: 0 0 auto; /* Prevents these from growing */
+    flex: 0 0 auto;
+    /* Prevents these from growing */
 }
 
 .fixed-sidebar .action .action-item {
@@ -431,6 +437,115 @@ header .top-nav .main-head .main-head-icon li {
     list-style-type: none;
 
 }
+
+/* Search anything Styles*/
+.search-container {
+    position: relative;
+    min-width: 320px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 50px;
+}
+
+.search-container .search-input {
+    width: 100%;
+    padding: 10px 40px 10px 32px;
+    border-radius: 50px;
+    border: 1px solid var(--neutral-grey-8);
+}
+
+.search-container .search-input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 5px var(--secondary-color-2);
+}
+
+.search-container .search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+}
+
+.search-container .dropdown-menu {
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.search-container .dropdown-menu .dropdown-item {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-container .dropdown-menu .dropdown-item:hover {
+    background-color: var(--neutral-grey-9);
+}
+
+.recent-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.recent-header .title {
+    font-size: var(--l2-size);
+    font-weight: var(--font-bold);
+}
+
+.recent-header .clear-all {
+    font-size: var(--l3-size);
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+.recent-header .clear-all:hover {
+    text-decoration: underline;
+}
+
+.search-container .dropdown-menu .dropdown-item .item-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    height: 28px;
+    width: 28px;
+    border-radius: 100%;
+    color: var(--secondary-color);
+    background: var(--secondary-color-2);
+}
+
+.search-container .dropdown-menu #recentSearches .dropdown-item:nth-child(3) .item-icon {
+    background-color: #F1E5FF;
+    color: #5200B2;
+}
+
+.search-container .dropdown-menu #recentSearches .dropdown-item:nth-child(4) .item-icon {
+    background-color: #CCFFF4;
+    color: #008064;
+}
+
+.search-container .dropdown-menu .dropdown-item .item-details {
+    flex-grow: 1;
+}
+
+.search-container .dropdown-menu .dropdown-item .item-details .item-type {
+    color: #6c757d;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 767px) {
+    .search-container {
+        display: none;
+    }
+}
+
 
 /* Breadcrumb */
 header nav {
@@ -817,6 +932,7 @@ button.btn.btn-primary {
     display: flex;
     gap: 4px;
     align-items: center;
+    padding: 12px;
     background-color: var(--secondary-color);
     color: var(--text-white-color);
     font-weight: var(--font-medium);
